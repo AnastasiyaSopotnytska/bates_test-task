@@ -1,3 +1,245 @@
-.starter {
-  font-size: 18px;
+@import './index.scss';
+
+.main {
+  max-width: 1020px;
+  margin: 0 auto 100px;
+}
+
+.header {
+  text-align: center;
+
+  @include onDesktop {
+    display: flex;
+    margin-top: 30px;
+  }
+  
+  &_title {
+    font-weight: 600;
+    font-size: 40px;
+    margin: 14px 0;
+
+    @include onDesktop {
+      margin: 0 181px 0 0;
+    }
+  }
+
+  &_timezone {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+
+    @include onDesktop {
+      align-items: center;
+      margin: 0 19px 0 0;
+    }
+    &-logo {
+      width: 32px;
+      height: 32px;
+      background-image: url('./planet.svg');
+      margin-right: 15px;
+    }
+    &-title {
+      margin: 0;
+      font-weight: 600;
+      font-size: 22px;
+    }
+  }
+
+  &_selected {
+    position: relative;
+    display: inline;
+
+    &::before {
+      content: url('./select.svg');
+      left: 14px;
+      top: 0;
+      
+      position: absolute;
+      color: #000000;
+      z-index: 2;
+
+      @include onDesktop {
+        top: 11px;
+      }
+    }
+  }
+
+  &_select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    padding-top: 11px;
+    padding-bottom: 11px;
+    text-align: center;
+    width: 357px;
+    box-sizing: border-box;
+
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+
+    border: 1.5px solid #000000;
+    border-radius: 5px;
+
+    @include onDesktop {
+      width: 272px;
+    }
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  margin: 18px auto;
+  padding: 12px 15px 0;
+  width: 357px;
+  height: 132px;
+
+  background: #E9E9E9;
+  border-radius: 18px;
+
+  @include onDesktop {
+    flex-direction: row;
+    width: 557px;
+    height: 71px;
+    border-radius: 47px;
+    margin: 30px 0;
+  }
+
+  &_button {
+    width: 328px;
+    height: 46px;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 22px;
+    text-align: center;
+
+    color: #000000;
+    background-color: #E9E9E9;
+    border-radius: 61px;
+    border: transparent;
+    transition: 0.5s;
+
+    &:hover {
+      background: #bcd2f5;
+      border-radius: 61px;
+    }
+  }
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include onDesktop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+
+  &_tabs {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin: 18px auto;
+    padding: 12px 15px 0;
+    width: 357px;
+    height: 132px;
+  
+    background: #E9E9E9;
+    border-radius: 18px;
+  
+    @include onDesktop {
+      flex-direction: row;
+      width: 557px;
+      height: 71px;
+      border-radius: 47px;
+      margin: 0;
+    }
+  
+    &-button {
+      width: 328px;
+      height: 46px;
+      box-sizing: border-box;
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 22px;
+      text-align: center;
+      cursor: pointer;
+  
+      color: #000000;
+      background-color: #E9E9E9;
+      border-radius: 61px;
+      border: transparent;
+      transition: 0.5s;
+  
+      &:hover {
+        background: #bcd2f5;
+        border-radius: 61px;
+      }
+    }
+  }
+
+  &_adder {
+    display: flex;
+    justify-content: center;
+  
+    &-button {
+      padding: 20px 92px 20px 129px;
+      position: fixed;
+      z-index: 10;
+      bottom: 28px;
+      text-align: center;
+  
+      background: #4ADE80;
+      border-radius: 57px;
+  
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      border: none;
+  
+      color: #FFFFFF;
+      cursor: pointer;
+  
+      @include onDesktop {
+        position: relative;
+        width: 233px;
+        height: 69px;
+        padding: 20px 34px 20px 70px;
+        margin-top: 28px;
+      }
+  
+      &::before {
+        content: url('./plus.svg');
+        left: 93px;
+        top: 21px;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+
+        @include onDesktop {
+          left: 34px;
+        }
+      }
+  
+      &:hover {
+        background: #05e156;
+      }
+    }
+  }
+}
+
+
+.button-active {
+  background: #4285F4;
+  color: #FFFFFF;
 }

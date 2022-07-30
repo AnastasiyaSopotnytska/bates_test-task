@@ -1,0 +1,81 @@
+@import '/src/index.scss';
+
+.adder {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.55);
+
+  &_block {
+    width: 400px;
+    height: 200px;
+    margin: 250px auto;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+    background-color: rgb(255, 255, 255);
+    border: 5px #4ADE80 solid;
+    position: relative;
+
+    @include onDesktop {
+      margin-top: 180px;
+    }
+  }
+
+  &_close {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    color: #4ADE80;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+  }
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+
+    &-input {
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 2px #4ADE80 solid;
+      padding: 10px;
+
+      font-size: 16px;
+    }
+
+    &-button {
+      margin-top: 10px;
+      width: 200px;
+
+      padding: 8px;
+      bottom: 28px;
+      text-align: center;
+  
+      background: #4ADE80;
+      border-radius: 57px;
+  
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 29px;
+      border: none;
+  
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+  }
+}
+
+.text-danger {
+    color: red;
+}

@@ -1,0 +1,144 @@
+@import '/src/index.scss';
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include onDesktop {
+    justify-content: start;
+  }
+}
+
+.card {
+  width: 357px;
+  height: 148px;
+  margin-bottom: 20px;
+  position: relative;
+
+  color: #000000;
+  background: #E9E9E9;
+  border-radius: 15px;
+
+  @include onDesktop {
+    width: 285px;
+    margin-right: 80px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  &_title {
+    margin: 13px 15px 0 20px;
+    word-wrap: break-word;
+
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  &_button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: #E9E9E9;
+    border: none;
+    background-image: url('./dot.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 14px;
+    left: 29px;
+    cursor: pointer;
+
+    font-size: 24px;
+  }
+
+  &_time {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #000000;
+  }
+}
+
+.menu {
+  position: absolute;
+  z-index: 2;
+  bottom: -140px;
+
+  width: 172px;
+  height: 125px;
+
+  background: #FFFFFF;
+  background: linear-gradient(-180deg, #FFFFFF 65%, #FF4A4A 60%);
+  border: 2px solid #CECECE;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  // align-items: flex-end;
+
+  &_edit {
+    padding: 11px 81px 0 49px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+
+    &::before {
+      content: url('./pen.svg');
+      position: absolute;
+      width: 18px;
+      height: 20px;
+      left: 12px;
+      top: 13px;
+    }
+  }
+
+  &_publish {
+    padding: 15px 50px 5px 49px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+
+    &::before {
+      content: url('./published.svg');
+      position: absolute;
+      width: 18px;
+      height: 20px;
+      left: 12px;
+    }
+  }
+
+  &_delete {
+    position: relative;
+    color: #FFFFFF;
+    padding: 16px 55px 11px 49px;
+    background-color: transparent;
+    border: none;
+
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+
+    &::before {
+      content: url('./delete.svg');
+      position: absolute;
+      width: 18px;
+      height: 20px;
+      left: 12px;
+    }
+  }
+}
